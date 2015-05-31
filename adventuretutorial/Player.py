@@ -42,8 +42,7 @@ class Player:
 	
 	def move_west(self):
 		self.move(dx=-1, dy=0)
-		
-		
+	
 	def attack(self, enemy):
 		best_Weapon = None
 		max_dmg = 0
@@ -53,7 +52,7 @@ class Player:
 					max_damage = i.damage
 					best_Weapon = i
 					
-		print("You use{} against {}!".format(best_Weapon.name, enemy.name))
+		print("You use {} against {}! and deal {}!".format(best_Weapon.name, enemy.name, best_Weapon.damage))
 		enemy.hp -= best_Weapon.damage
 		if not enemy.is_alive():
 			print("You killed {}!".format(enemy.name))
