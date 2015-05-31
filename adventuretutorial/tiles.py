@@ -51,6 +51,7 @@ class LootRoom(MapTile):
 
 	def modify_Player(self, player):
 		self.add_loot(player)
+		World.modify_tiles(self.x, self.y)
 
 class Find5GoldRoom(LootRoom):
 	def __init__(self, x, y):
@@ -152,8 +153,9 @@ class SnakePitRoom(EnemyRoom):
 	def intro_text(self):
 		if self.enemy.is_alive():
 			return """
-			You stumble into a pit of snakes! thankfully they look non venemous.
-			but they are dangerous none the less.
+			You stumble into a pit of snakes!
+			Thankfully they look non venemous.
+			But they are dangerous none the less!
 			"""
 		else:
 			return """
